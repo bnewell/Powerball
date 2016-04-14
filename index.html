@@ -1,0 +1,90 @@
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<head>
+    <title>Powerball Simulator</title>
+    <meta name="description" content="A free Powerball Lottery simulator. Save time and money by not actually playing Powerball.">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="pb.js"></script>
+</head>
+<body onload="displayBalls()">
+<!------------------------>
+<!-- start main content -->
+<!------------------------>
+<div id="content">
+<h1>POWERBALL</h1>
+
+<div id="menu">
+    <p>
+    <a href="#" onclick="openPopup(event, 'howToPlay')">How To Play</a> | 
+    <a href="#" onclick="openPopup(event, 'statistics')">Statistics</a> | 
+    <a href="#" onclick="openPopup(event, 'about')">About</a>
+    </p>
+</div>
+
+<div id="powerBall">
+    <ol id="winningNumbers"></ol>
+</div>
+
+<div id="gameBoard">
+    <p><strong>Best Play: </strong><span id="bestPlay">None.</span></p>
+    <textarea id="playNums" rows=5 cols=20></textarea>
+    <button onclick="play()">Buy a Ticket</button>
+    <button width=6 id="playStop" onclick="playForMe()">Play for Me</button>
+</div>
+
+<div id="win">
+    <p>
+        $<span id="moneySpent">0</span> spent.
+        $<span id="moneyWon">0</span> won.
+    </p>    
+    <p><em>Was it worth it?</em></p>
+    <span id="didYouWin">Yes.</span>
+</div>
+</div>
+<!---------------------->
+<!-- end main content--->
+<!---------------------->
+
+
+<!------------>
+<!-- popups -->
+<!------------>
+
+<!-- How To Play -->
+<div class="popup" id="howToPlay">
+    <a href="#" onclick="closePopup('howToPlay')" class="close">X</a>
+    <h2>How To Play</h2>
+    <ul>
+        <li>Powerball is a cash game won by matching all five white balls in any order and the red powerball.</li>
+        <li>Drawings take place every Wednesday and Saturday night at 10:59 p.m. Eastern Time.</li>
+        <li>Each ticket costs $2.</li>
+        <li><a href="http://www.powerball.com/powerball/pb_howtoplay.asp">Read More</a> (External Link)</li>
+    </ul>
+    <p><a href="#" onclick="closePopup('howToPlay')" class="closeLink">Close This Popup</a></p>
+</div>
+
+<!-- Statistics -->
+<div class="popup" id="statistics">
+    <a href="#" onclick="closePopup('statistics')" class="close">X</a>
+    <h2>Statistics</h2>
+    <ul>
+        <li>Odds to win Grand Prize are 1 in 292,201,338.00.</li>
+        <li>White balls are drawn from a pool of 69 balls and there can be no duplicates. The powerball is drawn from a pool of 26 balls. You must match all white balls in any order and the powerball to win the Grand Prize.</li>
+        <li><em>Math:</em> Combination without Repetition. (69!)/(5!64!) * 26 = 292,201,338.00</li>
+    </ul>
+    <p><a href="#" onclick="closePopup('statistics')" class="closeLink">Close This Popup</a></p>
+</div>
+
+<!-- About -->
+<div class="popup" id="about">
+    <a href="#" onclick="closePopup('about')" class="close">X</a>
+    <h2>About</h2>
+    <p>Powerball Simulator was created to give one the thrill of playing powerball but without actually having to waste money. Once the simulator begins running through the many possible combinations, the realization slowly sets in with just how futile the game actually is.</p>
+    <p>Created by <a href="http://www.relabit.com">Relabit Technology</a>.</p>
+    <p><a href="#" onclick="closePopup('about')" class="closeLink">Close This Popup</a></p>   
+</div>
+
+
+
+</body>
+</html>
